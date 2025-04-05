@@ -5,12 +5,18 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Анимированный экран загрузки
+ */
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
+    private val handler =
+        Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
         logoImageView.startAnimation(scaleAnimation)
 
         // Задержка перед переходом на основной экран
-        Handler().postDelayed({
+        handler.postDelayed({
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
