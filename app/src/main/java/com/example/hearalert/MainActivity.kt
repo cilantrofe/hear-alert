@@ -68,25 +68,26 @@ class MainActivity : AppCompatActivity() {
         notificationHelper.createNotificationChannel()
 
         // Запуск непрерывной записи по нажатию кнопки "Старт"
-        binding.buttonStartRecording.setOnClickListener {
-            // Проверка на разрешение использование микрофона
-            if (ContextCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.RECORD_AUDIO
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                requestPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+        binding.switch3.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                if (ContextCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.RECORD_AUDIO
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    requestPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
+                    binding.switch3.isChecked = false // Откат если нет разрешения
+                } else {
+                    isRecording = true
+                    binding.statusText.text = "Прослушивание включено"
+                    Toast.makeText(this, "Начало записи!", Toast.LENGTH_SHORT).show()
+                    startSegmentRecording()
+                }
             } else {
-                isRecording = true
-                Toast.makeText(this, "Начало записи!", Toast.LENGTH_SHORT).show()
-                startSegmentRecording()
+                isRecording = false
+                binding.statusText.text = "Прослушивание выключено"
+                Toast.makeText(this, "Запись остановлена!", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        // Остановка непрерывной записи по нажатию кнопки "Стоп"
-        binding.buttonStopRecording.setOnClickListener {
-            isRecording = false
-            Toast.makeText(this, "Запись остановлена!", Toast.LENGTH_SHORT).show()
         }
     }
 

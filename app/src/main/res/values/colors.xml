@@ -3,4 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="coral">#FA9291</color>
+    <color name="more_coral">#f7615e</color>
+    <color name="red">#ef2d09</color>
 </resources>
