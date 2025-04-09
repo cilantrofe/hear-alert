@@ -1,6 +1,7 @@
 package com.example.hearalert
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
@@ -88,6 +89,12 @@ class MainActivity : AppCompatActivity() {
                 binding.statusText.text = "Прослушивание выключено"
                 Toast.makeText(this, "Запись остановлена!", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        binding.aboutButton.setOnClickListener {
+            // Переход на экран About
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
         }
     }
 

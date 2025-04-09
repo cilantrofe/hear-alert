@@ -19,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:thumb="@drawable/rectangle_thumb"
-            android:track="@drawable/rectangle_tack" />
+            android:track="@drawable/rectangle_tack"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
         <TextView
             android:id="@+id/statusText"
@@ -30,6 +31,18 @@
             android:textColor="#AAAAAA"
             android:textSize="18sp" />
 
+
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/aboutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:background="@null"
+        android:src="@drawable/about" /> <!-- Описание для доступности -->
+
 
 </RelativeLayout>

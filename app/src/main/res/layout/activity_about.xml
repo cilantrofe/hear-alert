@@ -1,14 +1,61 @@
-<!-- res/layout/activity_about.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    tools:context=".AboutActivity">
 
-    <TextView
-        android:id="@+id/about_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About Screen"
-        android:textSize="24sp"
-        android:layout_centerInParent="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/aboutTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="О приложении HearAlert"
+            android:textColor="#f7615e"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- Описание -->
+        <TextView
+            android:id="@+id/aboutText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="6dp"
+            android:paddingBottom="24dp"
+            android:text="🔊 HearAlert — это приложение для обнаружения важных звуков из окружающей среды, таких как:\n\n• сирены\n• звонки в дверь\n• крики и другие резкие звуки\n\n🧠 Оно использует искусственный интеллект для анализа звуков и отправляет уведомления, когда обнаруживает что-то важное.\n\n▶ Чтобы начать, просто включите переключатель на главном экране — и приложение начнёт прослушивание."
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <!-- Поддержка -->
+        <TextView
+            android:id="@+id/supportText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="email"
+            android:clickable="true"
+            android:linksClickable="true"
+            android:paddingTop="8dp"
+            android:text="📧 Поддержка: support_hearalert@mail.ru"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start"
+        android:layout_margin="16dp"
+        android:contentDescription="Назад"
+        android:src="@drawable/ic_arrow_back" />
 </RelativeLayout>
