@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat
 class NotificationHelper(private val context: Context) {
     private val classLabels = mapOf(
         1 to "Автомобильный гудок",
-        2 to "Дети играют",
+        2 to "Игра детей",
         3 to "Лай собаки",
         6 to "Выстрел",
         8 to "Сирена",

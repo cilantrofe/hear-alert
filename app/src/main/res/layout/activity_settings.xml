@@ -1,14 +1,91 @@
-<!-- res/layout/activity_settings.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    tools:context=".SettingsActivity">
 
-    <TextView
-        android:id="@+id/settings_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings Screen"
-        android:textSize="24sp"
-        android:layout_centerInParent="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/aboutTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Настройте уведомления"
+            android:textColor="#f7615e"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/checkbox_siren"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/coral"
+            android:checked="true"
+            android:text="Автомобильный гудок"
+            android:textColor="#333333" />
+
+        <CheckBox
+            android:id="@+id/checkbox_cry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/coral"
+            android:checked="true"
+            android:text="Игра детей"
+            android:textColor="#333333" />
+
+        <CheckBox
+            android:id="@+id/checkbox_dog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/coral"
+            android:checked="true"
+            android:text="Лай собаки"
+            android:textColor="#333333" />
+
+        <CheckBox
+            android:id="@+id/checkbox_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/coral"
+            android:checked="true"
+            android:text="Выстрел"
+            android:textColor="#333333" />
+
+        <CheckBox
+            android:id="@+id/checkbox_gunshot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/coral"
+            android:checked="true"
+            android:text="Сирена"
+            android:textColor="#333333" />
+
+        <CheckBox
+            android:id="@+id/checkbox_streetmusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/coral"
+            android:checked="true"
+            android:text="Уличная музыка"
+            android:textColor="#333333" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start"
+        android:layout_margin="16dp"
+        android:contentDescription="Назад"
+        android:src="@drawable/ic_arrow_back" />
 </RelativeLayout>
