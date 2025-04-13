@@ -38,11 +38,23 @@
         android:id="@+id/aboutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginBottom="50dp"
         android:background="@null"
-        android:src="@drawable/about" /> <!-- Описание для доступности -->
+        android:src="@drawable/about" />
+    
+    <ImageButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="50dp"
+        android:background="@null"
+        android:src="@drawable/settings" />
 
 
 </RelativeLayout>

@@ -96,6 +96,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
+
+        binding.settingsButton.setOnClickListener {
+            // Переход на экран настроек
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     /**
@@ -148,17 +154,14 @@ class MainActivity : AppCompatActivity() {
             // Вытаскиваем предсказанный класс и его вероятность
             val (predictedClass, confidence) = predictWithTFLite(mfccFeatures)
 
+            // Вытаскиваем классы, на которые пользователь хочет получать уведомления
+            val prefs = getSharedPreferences("hearalert_prefs", MODE_PRIVATE)
+            val isEnabled = prefs.getBoolean("class_$predictedClass", false)
+
             // Если вероятность более 70% и об этом классе еще не уведомляли(для ограничения спама),
             // то отправляем push уведомление
             if (confidence != null && predictedClass != null) {
-                if (confidence > 0.7 && lastNotifiedClass != predictedClass && predictedClass in listOf(
-                        1,
-                        2,
-                        3,
-                        6,
-                        8,
-                        9
-                    )
+                if (confidence > 0.7 && lastNotifiedClass != predictedClass && isEnabled
                 ) {
                     Log.v(
                         "PUSH",
