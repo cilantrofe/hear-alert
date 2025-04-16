@@ -35,6 +35,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <service
+            android:name=".AudioForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
         <activity android:name=".AboutActivity" />
         <activity android:name=".SettingsActivity" />
     </application>
