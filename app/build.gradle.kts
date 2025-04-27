@@ -40,6 +40,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            isReturnDefaultValues = true
+        }
+    }
 
 }
 
@@ -50,7 +56,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
+    testImplementation(libs.mockito)
+    testImplementation(libs.androidx.core)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
@@ -60,7 +69,7 @@ dependencies {
         exclude(group = "junit", module = "junit")
     }
 
-    implementation (libs.android.wave.recorder)
+    implementation(libs.android.wave.recorder)
 
 
 }

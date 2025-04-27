@@ -1,6 +1,7 @@
 [versions]
 agp = "8.7.3"
 androidWaveRecorder = "2.0.1"
+core = "1.6.1"
 kotlin = "2.0.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -11,9 +12,11 @@ material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
 jlibrosa = "1.1.8"
+junitKtx = "1.2.1"
 
 [libraries]
 android-wave-recorder = { module = "com.github.squti:Android-Wave-Recorder", version.ref = "androidWaveRecorder" }
+androidx-core = { module = "androidx.test:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -24,6 +27,8 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 tensorflow-lite = { module = "org.tensorflow:tensorflow-lite", version = "2.17.0" }
 jlibrosa = { group = "com.litongjava", name = "jlibrosa", version.ref = "jlibrosa" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
+mockito = { module = "org.mockito:mockito-core", version = "2.20.1" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

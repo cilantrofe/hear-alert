@@ -132,7 +132,7 @@ class AudioForegroundService : Service() {
             // Если вероятность более 70% и об этом классе еще не уведомляли(для ограничения спама),
             // то отправляем push уведомление
             if (confidence != null && predictedClass != null) {
-                if (confidence > 0.7 && lastNotifiedClass != predictedClass /*&& isEnabled*/) {
+                if (confidence > 0.7 && lastNotifiedClass != predictedClass && isEnabled) {
                     notificationHelper.showPushNotification("Обнаружен важный звук", predictedClass)
                     lastNotifiedClass = predictedClass
                 }
